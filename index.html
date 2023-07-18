@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Form Registration</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>Registration</header>
+        <form action="#">
+            <div class="fields">
+                <div class="field">
+                    <label for="name" id="word">NAME: </label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="field">
+                    <label for="reg" id="word">REG NO: </label>
+                    <input type="number" id="reg" placeholder="Register No">
+                </div>
+                <div class="field">
+                    <label for="mobile" id="word">MOBILE NO: </label>
+                    <input type="text" id="mobile" placeholder="MOBILE No"
+                        onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                        maxlength="10">
+                </div>
+                <div class="field">
+                    <label for="email" id="word">EMAIL: </label>
+                    <input type="email" id="email" placeholder="EMail ID">
+                </div>
+                <!-- state -->
+                <div class="field">
+                    <select onchange="changestate()" id="stateid">
+                        <option>Select State</option>
+                    </select>
+                </div>
+                <!-- District -->
+                <div class="field">
+                    <select id="district">
+                        <option>Select District</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="password" id="word">PASSWORD: </label>
+                    <div class="password-container">
+                        <input type="password" id="password" placeholder="Password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <i class="fa-solid fa-eye" id="eye" onclick="showpassword()"></i>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="confirm" id="word">CONFIRM PASSWORD: </label>
+                    <div class="password-container">
+                        <input type="password" id="confirm" placeholder="Confirm Password">
+                        <i class="fa-solid fa-eye" id="eye" onclick="showconfirmpassword()"></i>
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="field">
+                        <button onclick="validate()">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="demo">
+
+        </div>
+        <div id="demo1"></div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
